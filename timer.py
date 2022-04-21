@@ -2,7 +2,7 @@ from time import time
 from typing import Callable
 
 
-def timer(func: Callable):
+def timer(func: Callable) -> Callable:
     def f(*args, **kwargs):
         before = time()
         rv = func(*args, **kwargs)
@@ -12,13 +12,13 @@ def timer(func: Callable):
     return f
 
 
-def main():
+def example():
 
     @timer
-    def add(x: int, y: int = 10):
+    def add(x: int, y: int = 10) -> float:
         return x + y
 
     add(x=10)
 
 if __name__ == "__main__":
-    main()
+    example()
