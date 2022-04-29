@@ -10,15 +10,3 @@ def timer(func: Callable) -> Callable:
         print(f"Time elapsed {after-before} s")
         return rv
     return f
-
-
-def example():
-
-    @timer
-    def add(x: int, y: int = 10) -> float:
-        return x + y
-
-    add(x=10)
-
-if __name__ == "__main__":
-    example()
